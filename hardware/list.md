@@ -5,9 +5,9 @@
   - 256GB SSD
 
 ### 10Gb Networking Gear
-[Asus 10Gb PCIe X4 SFP+ Fiber Network Card XG-C100F](https://www.asus.com/Networking-IoT-Servers/Wired-Networking/All-series/XG-C100F/)    
-[QNAP 8x 1Gb Ethernet & 4x 10Gb SFP+ Managed Switch](https://www.qnap.com/en-us/product/qsw-m408s)    
-[10Gb SFP+ DAC Twinax Network Cable](https://www.amazon.com/gp/product/B00WHS3NCA)    
+  - [Asus 10Gb PCIe X4 SFP+ Fiber Network Card XG-C100F](https://www.asus.com/Networking-IoT-Servers/Wired-Networking/All-series/XG-C100F/)    
+  - [QNAP 8x 1Gb Ethernet & 4x 10Gb SFP+ Managed Switch](https://www.qnap.com/en-us/product/qsw-m408s)    
+  - [10Gb SFP+ DAC Twinax Network Cable](https://www.amazon.com/gp/product/B00WHS3NCA)    
 
 ### Price List
 | Item           | count |   ea   | total + shipping |
