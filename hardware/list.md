@@ -21,5 +21,5 @@
 | GRAND TOTAL    |       |        |         1,637.72 |
 
 --------------------------------------------
-* Prices & Links as of 07/24/2021    
-** CCIO and it's contributors are not sponsored by or affiliated with any of the hardware or vendors referenced    
+** Prices & Links as of 07/24/2021    
+*** CCIO and it's contributors are not sponsored by or affiliated with any of the hardware or vendors referenced    
