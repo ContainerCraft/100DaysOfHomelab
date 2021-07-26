@@ -17,8 +17,8 @@ How To:
 ```sh
   sudo dd if=~/Downloads/$NAME_OF_UBUNTU_ISO_FILE of=/dev/$DEVICE bs=1024k conv=sync status=progress
 ```
-And now wait until USB drive is done writing the file. The USB should blink showing
-activity for a while after the command is run
+And now wait until the USB drive is done writing the file. The USB should blink
+showing activity for a while after the command is run.
 
 ### 03. Install CentOS on all nodes
 > NOTE: when planning an install on a system with more than one storage device 
