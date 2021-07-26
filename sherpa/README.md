@@ -27,11 +27,14 @@ Non-Goals:
     - 1 x 10Gb Fiber
 
 ## 3 Node Cluster Resource Total
-|         | Current | Maximum |
-|:--------|:--------|:--------|
-| CPU     | 12c/24t | 12c/24t | 
-| Memory  | 48GB    | 192GB   |
-| Storage | 768GB   | 30TB    |
+|         | Minimum | Current |  Maximum  |
+|:--------|:--------|:--------|:----------|
+| Node #  |        1|        3| 3 or more | 
+| CPU     |  4c/8t  | 12c/24t | 12c/24t   | 
+| Memory  |   16GB  | 48GB    | 192GB     |
+| Storage |  256GB  | 768GB   | 30TB      |
+\*Primary storage should be SSD or better
+\**Estimated minimum budget if bying all parts to start should be aprox $400 USD
 
 ## Hardware List
   - Dell Optiplex 7050 SFF ([on ebay](https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=Dell+Optiplex+7050+SFF&_sacat=0))
