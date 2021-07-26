@@ -47,7 +47,7 @@ Non-Goals:
     - [QNAP 8x 1Gb Ethernet & 4x 10Gb SFP+ Managed Switch](https://www.qnap.com/en-us/product/qsw-m408s)    
     - [10Gb SFP+ DAC Twinax Network Cable](https://www.amazon.com/gp/product/B00WHS3NCA)    
 
-## Itemized Prices
+## Itemized Prices for current CCIO Sherpa cluster
 | Item           | count |   ea   | total + shipping |
 |:---------------|:-----:|-------:|-----------------:|
 | Optiplex(es)   | 3     | 299.00 |         1,046.66 |
