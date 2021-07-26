@@ -32,4 +32,4 @@ showing activity for a while after the command is run.
 > NOTE: We are going to use a bridge interface named 'br0' as each node's primary
 > network interface. Follow the examples to learn how.
 
-[![asciicast](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu.png)](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu)
+[![asciicast](https://asciinema.org/a/ffiXIXpO2sjMEG2VOkyLeU8Jk.png)](https://asciinema.org/a/ffiXIXpO2sjMEG2VOkyLeU8Jk)
