@@ -11,6 +11,9 @@ Non-Goals:
   - Production Viable Architecture
   - Elimination of all Single Points of Failure
 
+## Operating System (OS)
+| Flavor            | Status                            |
+|:------------------|-----------------------------------|
 | [CentOS Stream 8] | Recommended                       |
 | [Fedora 34+]      | Support in development            |
 | [Ubuntu 20.04+]   | Desktop only, method undocumented |
