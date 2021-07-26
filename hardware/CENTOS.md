@@ -8,12 +8,12 @@ How To:
   - [Mac](https://docs.centos.org/en-US/centos/install-guide/Making_Media_USB_Mac/)
   - Linux (below)
 
-  a. Attach USB to Linux system
-  b. In terminal, find the device path with 
+  a. Attach USB to Linux system    
+  b. In terminal, find the device path with    
 ```sh
   sudo lsblk
 ```
-  c. Write ISO to USB with the following command
+  c. Write ISO to USB with the following command    
 ```sh
   sudo dd if=~/Downloads/$NAME_OF_UBUNTU_ISO_FILE of=/dev/$DEVICE bs=1024k conv=sync status=progress
 ```
