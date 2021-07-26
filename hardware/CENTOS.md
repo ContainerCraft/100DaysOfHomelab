@@ -14,7 +14,7 @@ How To:
 ```
   c. Write ISO to USB with the following command
 ```sh
-  sudo dd if=~/Downloads/${NAME_OF_UBUNTU_ISO_FILE} of=/dev/sdc bs=1024k conv=sync status=progress
+  sudo dd if=~/Downloads/$NAME_OF_UBUNTU_ISO_FILE of=/dev/$DEVICE bs=1024k conv=sync status=progress
 ```
 And now wait until USB drive is done writing the file. The USB should blink showing
 activity for a while after the command is run
