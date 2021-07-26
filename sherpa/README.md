@@ -34,8 +34,8 @@ Non-Goals:
 | Memory  |   16GB  | 48GB    | 192GB     |
 | Storage |  256GB  | 768GB   | 30TB      |
     
-\*Primary storage should be SSD or better
-\**Estimated minimum budget if bying all parts to start should be aprox $400 USD
+\*Primary storage should be SSD or better    
+\**Estimated minimum budget if bying all parts to start should be aprox $400 USD    
 
 ## Hardware List
   - Dell Optiplex 7050 SFF ([on ebay](https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=Dell+Optiplex+7050+SFF&_sacat=0))
@@ -59,5 +59,5 @@ Non-Goals:
 | GRAND TOTAL    |       |        |         1,637.72 |
 
 --------------------------------------------
-** Prices & Links as of 07/24/2021    
-*** CCIO and it's contributors are not sponsored by or affiliated with any of the hardware or vendors referenced    
+\* Prices & Links as of 07/24/2021    
+\** CCIO and it's contributors are not sponsored by or affiliated with any of the hardware or vendors referenced    
