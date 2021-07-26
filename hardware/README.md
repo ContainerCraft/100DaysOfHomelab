@@ -1,6 +1,6 @@
 # Sherwa | Hardware Reference Architecture
 Sherwa, The 100 Days of Homelab Reference Architecture is intended to demonstrate
-practical up-cycling of effective and low/moderate cost comodity hardware.
+practical up-cycling of effective and low cost comodity hardware.
 
 Goals:
   - Cloud Scale like Infrastructure Modeling
