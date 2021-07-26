@@ -1,6 +1,7 @@
 # CentOS Stream 8 Install & Setup Guide
 
-### 01. Download CentOS ISO Install File
+### 01. Download [CentOS Server] ISO Install File
+[CentOS Server]:https://www.centos.org/centos-stream/
 ### 02. Create a Bootable USB Drive from the CentOS ISO
 How To:
   - [Windows](https://docs.centos.org/en-US/centos/install-guide/Making_Media_USB_Windows/)
