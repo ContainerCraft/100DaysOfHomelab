@@ -9,6 +9,7 @@ Goals:
 
 Non-Goals:
   - Production Viable Architecture
+  - System architectures other than x86
   - Elimination of all Single Points of Failure
 
 ## Operating System (OS)
