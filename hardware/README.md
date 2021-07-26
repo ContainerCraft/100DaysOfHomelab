@@ -1,5 +1,5 @@
-# Sherpa | Hardware Reference Architecture
-Sherpa, The 100 Days of Homelab Reference Architecture is intended to demonstrate
+# Sherwa | Hardware Reference Architecture
+Sherwa, The 100 Days of Homelab Reference Architecture is intended to demonstrate
 practical up-cycling of effective and low/moderate cost comodity hardware.
 
 Goals:
@@ -51,7 +51,7 @@ Non-Goals:
     - [QNAP 8x 1Gb Ethernet & 4x 10Gb SFP+ Managed Switch](https://www.qnap.com/en-us/product/qsw-m408s)    
     - [10Gb SFP+ DAC Twinax Network Cable](https://www.amazon.com/gp/product/B00WHS3NCA)    
 
-## Itemized Prices for current CCIO Sherpa cluster
+## Itemized Prices for current CCIO Sherwa cluster
 | Item           | count |   ea   | total + shipping |
 |:---------------|:-----:|-------:|-----------------:|
 | Optiplex(es)   | 3     | 299.00 |         1,046.66 |
