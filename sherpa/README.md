@@ -33,6 +33,7 @@ Non-Goals:
 | CPU     |  4c/8t  | 12c/24t | 12c/24t   | 
 | Memory  |   16GB  | 48GB    | 192GB     |
 | Storage |  256GB  | 768GB   | 30TB      |
+    
 \*Primary storage should be SSD or better
 \**Estimated minimum budget if bying all parts to start should be aprox $400 USD
 
