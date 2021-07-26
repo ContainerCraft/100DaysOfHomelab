@@ -30,10 +30,5 @@ activity for a while after the command is run
 ### 04. Configure a network bridge on all nodes
 >> NOTE: We are going to use a bridge interface named 'br0' as each node's primary
 >> network interface. Follow the examples to learn how.
-Examples:
-  - [![asciicast](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu.png)](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu)
 
-### 03. 
-### 03. 
-### 03. 
-### 03. 
+[![asciicast](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu.png)](https://asciinema.org/a/ZAZRp5svrO288yhznO8IEgDmu)
