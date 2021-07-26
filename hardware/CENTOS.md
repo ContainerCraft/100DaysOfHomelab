@@ -29,7 +29,8 @@ showing activity for a while after the command is run.
 > your Virtual Machine Storage Classes.
 
 ### 04. Configure a network bridge on all nodes
-> NOTE: We are going to use a bridge interface named 'br0' as each node's primary
-> network interface. Follow the examples to learn how.
+We are going to use a bridge interface named 'br0' as each node's primary network
+interface. Follow the examples to learn how.
+> NOTE: click to open & play the recording below
 
 [![asciicast](https://asciinema.org/a/ffiXIXpO2sjMEG2VOkyLeU8Jk.png)](https://asciinema.org/a/ffiXIXpO2sjMEG2VOkyLeU8Jk)
