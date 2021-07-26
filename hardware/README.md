@@ -25,9 +25,9 @@ Non-Goals:
 | [Fedora 34+]      | Support in development            |
 | [Ubuntu 20.04+]   | Desktop only, method undocumented |
     
-[CentOS Stream 8](https://www.centos.org/centos-stream/)
-[Fedora 34+](https://ubuntu.com/download/desktop)
-[Ubuntu 20.04+](https://getfedora.org/en/server/)
+[CentOS Stream 8]:https://www.centos.org/centos-stream/
+[Fedora 34+]:https://ubuntu.com/download/desktop
+[Ubuntu 20.04+]:https://getfedora.org/en/server/
 
 ## Kargo Bare Metal Hosts (Starting Configuration)
   - Processor: 4c 8T
