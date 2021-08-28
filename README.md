@@ -2,4 +2,4 @@
 ~~ Starting Winter 2021 ~~
 
 ## Logical Architecture
-[lasvg](./web/drawio/LogicalArchitecture.svg)
+![lasvg](./web/drawio/LogicalArchitecture.svg)
