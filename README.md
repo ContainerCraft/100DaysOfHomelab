@@ -2,4 +2,4 @@
 ~~ Starting Winter 2021 ~~
 
 ## Logical Architecture
-![lasvg](./web/drawio/LogicalArchitecture.svg)
+![lasvg](https://raw.githubusercontent.com/ContainerCraft/100DaysOfHomelab/main/web/drawio/100Days.png)
