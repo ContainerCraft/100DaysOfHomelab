@@ -241,7 +241,7 @@ ansible -i inventory/kargo/hosts.yaml -m ping all && time ansible-playbook -i in
 ```sh
 mkdir -p ~/.kube && cp inventory/kargo/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
 kubectl patch node node1 -p '{"spec":{"taints":[]}}'
-curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/images/multus-daemonset-crio.yml | kubectl apply -f -
+curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/images/multus-daemonset.yml | kubectl apply -f -
 kubectl patch deployment -n kube-system coredns --patch='{"spec":{"template":{"spec":{"tolerations":[]}}}}'
 kubectl -n kube-system rollout restart deployment/coredns
 sleep 6
