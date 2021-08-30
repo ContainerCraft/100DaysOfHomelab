@@ -16,6 +16,7 @@ curl -L github.com/${GH_USERNAME}.keys | tee -a .ssh/authorized_keys
 ### 6. Prepare hosts for Kuberenetes Deploy
 #### 6.a) Install Dependencies
 ```sh
+sudo systemctl disable firewalld --now
 sudo dnf remove -y zram-generator-defaults # disable swap
 sudo dnf install -y openvswitch libibverbs openvswitch-devel NetworkManager-ovs keepalived haproxy dnf-automatic python3 python3-pip screenfetch glances lm_sensors htop tmux vim git tar
 sudo sed -i 's/^apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
@@ -226,6 +227,8 @@ loadbalancer_apiserver:
   port: 8443
 #######################################################
 # EXPERIMENTAL
+# :w!
+# curl -L https://raw.githubusercontent.com/alauda/kube-ovn/release-1.7/dist/images/install.sh | bash
 #kube_network_plugin: kube-ovn
 EOF
 ```
