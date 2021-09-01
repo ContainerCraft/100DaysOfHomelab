@@ -205,7 +205,7 @@ CONFIG_FILE=inventory/${CLUSTER}/hosts.yaml python3 contrib/inventory_builder/in
 ```
   - Write override variables to file
 ```sh
-cat <<EOF >vars.yml
+cat <<EOF > ${CLUSTER}-vars.yml
 container_manager: crio
 kube_encrypt_secret_data: true
 kube_network_plugin_multus: true
