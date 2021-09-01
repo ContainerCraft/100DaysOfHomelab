@@ -199,9 +199,9 @@ export CLUSTER="kargo"
 ```
   - Create ansible hosts inventory file
 ```sh
-cp -rfp inventory/sample inventory/kargo
+cp -rfp inventory/sample inventory/${CLUSTER}
 declare -a IPS="${IPADDR1} ${IPADDR2} ${IPADDR3}"
-CONFIG_FILE=inventory/kargo/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+CONFIG_FILE=inventory/${CLUSTER}/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
   - Write override variables to file
 ```sh
@@ -221,7 +221,7 @@ ping_access_ip: true
 #######################################################
 # Support HAPROXY & VRRP for High Availability
 loadbalancer_apiserver_localhost: false
-apiserver_loadbalancer_domain_name: "kargo.codectl.arpa"
+apiserver_loadbalancer_domain_name: "${CLUSTER}.codectl.arpa"
 loadbalancer_apiserver:
   address: ${VIPADDR}
   port: 8443
@@ -235,11 +235,11 @@ EOF
 #### 8) Run ansible playbook
   - first task tests ssh access to all nodes
 ```sh
-ansible -i inventory/kargo/hosts.yaml -m ping all && time ansible-playbook -i inventory/kargo/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @vars.yml --user=fedora cluster.yml
+ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @vars.yml --user=fedora cluster.yml
 ```
 #### 2.m) Link kubectl into path && Optimize for single node
 ```sh
-mkdir -p ~/.kube && cp inventory/kargo/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
+mkdir -p ~/.kube && cp inventory/${CLUSTER}/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
 kubectl patch node node1 -p '{"spec":{"taints":[]}}'
 curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/images/multus-daemonset.yml | kubectl apply -f -
 kubectl patch deployment -n kube-system coredns --patch='{"spec":{"template":{"spec":{"tolerations":[]}}}}'
