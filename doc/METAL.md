@@ -235,7 +235,7 @@ EOF
 #### 8) Run ansible playbook
   - first task tests ssh access to all nodes
 ```sh
-ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @vars.yml --user=fedora cluster.yml
+ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
 ```
 #### 2.m) Link kubectl into path && Optimize for single node
 ```sh
