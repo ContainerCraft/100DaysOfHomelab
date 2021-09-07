@@ -252,3 +252,9 @@ kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":
 ```sh
 watch kubectl get po -A
 ```
+-------------------------------------------------
+# TIPS
+```sh
+sudo wipefs -a /dev/sdb
+sudo sfdisk --delete /dev/sdb
+```
