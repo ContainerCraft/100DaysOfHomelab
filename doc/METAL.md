@@ -221,7 +221,7 @@ ping_access_ip: true
 #######################################################
 # Support HAPROXY & VRRP for High Availability
 loadbalancer_apiserver_localhost: false
-apiserver_loadbalancer_domain_name: "${CLUSTER}.codectl.arpa"
+apiserver_loadbalancer_domain_name: "${CLUSTER}.home.arpa"
 loadbalancer_apiserver:
   address: ${VIPADDR}
   port: 8443
