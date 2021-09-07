@@ -235,7 +235,7 @@ EOF
 #### 8) Run ansible playbook
   - first task tests ssh access to all nodes
 ```sh
-ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
+ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all --user=fedora && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
 ```
 #### 2.m) Link kubectl into path && Optimize for single node
 ```sh
@@ -250,7 +250,8 @@ kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":
 ```
   - Wait for all pods to start up
 ```sh
-watch kubectl get po -A
+watch kubectl get po -Aansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
+
 ```
 -------------------------------------------------
 # TIPS
