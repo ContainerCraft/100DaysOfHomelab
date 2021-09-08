@@ -256,6 +256,12 @@ watch kubectl get po -Aansible -i inventory/${CLUSTER}/hosts.yaml -m ping all &&
 -------------------------------------------------
 # TIPS
 ```sh
-sudo wipefs -a /dev/sdb
-sudo sfdisk --delete /dev/sdb
+lvscan
+lvremove -y 
+vgscan
+vgremove -y
+pvscan
+pvremove -y
+sudo wipefs -a 
+sudo sfdisk --delete 
 ```
