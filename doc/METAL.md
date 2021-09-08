@@ -256,12 +256,12 @@ watch kubectl get po -Aansible -i inventory/${CLUSTER}/hosts.yaml -m ping all &&
 -------------------------------------------------
 # TIPS
 ```sh
-lvscan
-lvremove -y 
-vgscan
-vgremove -y
-pvscan
-pvremove -y
-sudo wipefs -a 
-sudo sfdisk --delete 
+## USE WITH EXTREME CAUTION
+for i in $(sudo lvscan | grep -v fedora | awk '{print $2}' | sed "s/'//g"); do sudo lvremove -y $i; done
+for i in $(sudo vgscan | grep -v fedora | awk '{print $4}' | sed 's/"//g'); do sudo vgremove -y $i; done
+for i in $(sudo pvscan | grep -v fedora | awk '/dev/{print $2}'); do sudo pvremove -y $i; done
+sudo wipefs -a /dev/sdb /dev/sdc /dev/nvme0n1
+sudo sfdisk --delete /dev/sdb
+sudo sfdisk --delete /dev/sdc
+sudo sfdisk --delete /dev/nvme0n1
 ```
