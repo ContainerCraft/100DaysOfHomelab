@@ -12,7 +12,7 @@
 ```sh
 mkdir ~/.ssh; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
 curl -L github.com/${GH_USERNAME}.keys | tee -a .ssh/authorized_keys
-```sudo grubby --update-kernel=ALL --args 'setenforce=0 selinux=0 cgroup_memory=1 cgroup_enable=cpuset cgroup_enable=memory systemd.unified_cgroup_hierarchy=0 intel_iommu=on iommu=pt rd.driver.pre=vfio-pci pci=realloc'
+```
 
 ### 6. Prepare hosts for Kuberenetes Deploy
 #### 6.a) Install Dependencies
