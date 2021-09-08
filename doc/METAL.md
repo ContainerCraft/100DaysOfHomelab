@@ -12,13 +12,14 @@
 ```sh
 mkdir ~/.ssh; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys
 curl -L github.com/${GH_USERNAME}.keys | tee -a .ssh/authorized_keys
-```
+```sudo grubby --update-kernel=ALL --args 'setenforce=0 selinux=0 cgroup_memory=1 cgroup_enable=cpuset cgroup_enable=memory systemd.unified_cgroup_hierarchy=0 intel_iommu=on iommu=pt rd.driver.pre=vfio-pci pci=realloc'
+
 ### 6. Prepare hosts for Kuberenetes Deploy
 #### 6.a) Install Dependencies
 ```sh
 sudo systemctl disable firewalld --now
 sudo dnf remove -y zram-generator-defaults # disable swap
-sudo dnf install -y openvswitch libibverbs openvswitch-devel NetworkManager-ovs keepalived haproxy dnf-automatic kata-containers util-linux python3 python3-pip screenfetch glances lm_sensors htop tmux vim git tar
+sudo dnf install -y openvswitch libibverbs openvswitch-devel NetworkManager-tui NetworkManager-ovs keepalived haproxy dnf-automatic kata-containers util-linux python3 python3-pip screenfetch glances lm_sensors htop tmux vim git tar
 sudo sed -i 's/^apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
 sudo systemctl enable --now dnf-automatic.timer
 sudo systemctl enable --now openvswitch
@@ -170,7 +171,7 @@ EOF
 ```
 ```sh
 sudo systemctl enable --now keepalived ; sleep 2; sudo systemctl restart keepalived ; sleep 2
-sudo systemctl restart NetworkManager ; sleep 3
+sudo systemctl restart NetworkManager ; sleep 5
 sudo systemctl status keepalived
 ip a s br0
 ```
@@ -191,11 +192,11 @@ python3 -m pip install --upgrade -r requirements.txt
   - Export Variables on all nodes
 ```sh
 export DNSIP=192.168.1.1
-export VIPADDR=192.168.1.60
-export IPADDR1=192.168.1.61
-export IPADDR2=192.168.1.62
-export IPADDR3=192.168.1.63
-export CLUSTER="kargo"
+export VIPADDR=192.168.1.50
+export IPADDR1=192.168.1.51
+export IPADDR2=192.168.1.52
+export IPADDR3=192.168.1.53
+export CLUSTER="undercloud"
 ```
   - Create ansible hosts inventory file
 ```sh
