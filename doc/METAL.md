@@ -42,11 +42,11 @@ sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
   - Export Variables on all nodes
 ```sh
 export DNSIP=192.168.1.1
-export VIPADDR=192.168.1.60
-export IPADDR1=192.168.1.61
-export IPADDR2=192.168.1.62
-export IPADDR3=192.168.1.63
-export CLUSTER="kargo"
+export VIPADDR=192.168.1.50
+export IPADDR1=192.168.1.51
+export IPADDR2=192.168.1.52
+export IPADDR3=192.168.1.53
+export CLUSTER="undercloud"
 ```
 ```sh
 cat <<EOF | sudo tee /etc/systemd/resolved.conf
