@@ -242,7 +242,7 @@ ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all --user=fedora && time ans
 ```sh
 mkdir -p ~/.kube && cp inventory/${CLUSTER}/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
 kubectl patch node node1 -p '{"spec":{"taints":[]}}'
-curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/images/multus-daemonset.yml | kubectl apply -f -
+curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset.yml | kubectl apply -f -
 kubectl patch deployment -n kube-system coredns --patch='{"spec":{"template":{"spec":{"tolerations":[]}}}}'
 kubectl -n kube-system rollout restart deployment/coredns
 sleep 6
