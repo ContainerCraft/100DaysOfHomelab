@@ -221,39 +221,37 @@ ping_access_ip: true
 #######################################################
 # Support HAPROXY & VRRP for High Availability
 loadbalancer_apiserver_localhost: false
-apiserver_loadbalancer_domain_name: "${CLUSTER}.home.arpa"
+apiserver_loadbalancer_domain_name: "api.${CLUSTER}.home.arpa"
 loadbalancer_apiserver:
   address: ${VIPADDR}
   port: 8443
-#######################################################
-# EXPERIMENTAL
-# curl -L https://raw.githubusercontent.com/alauda/kube-ovn/release-1.7/dist/images/install.sh | bash
-#kube_network_plugin: kube-ovn
 EOF
 ```
 #### 8) Run ansible playbook
   - first task tests ssh access to all nodes
 ```sh
-ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all --user=fedora && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
+ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all --user=$USER && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=$USER cluster.yml
 ```
 #### 2.m) Link kubectl into path && Optimize for single node
 ```sh
 mkdir -p ~/.kube && cp inventory/${CLUSTER}/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
-kubectl patch node node1 -p '{"spec":{"taints":[]}}'
 curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset.yml | kubectl apply -f -
+
+```
+  - Wait for all pods to start up
+```sh
+watch kubectl get po -A
+```
+-------------------------------------------------
+# TIPS
+```sh
+kubectl patch node node1 -p '{"spec":{"taints":[]}}'
 kubectl patch deployment -n kube-system coredns --patch='{"spec":{"template":{"spec":{"tolerations":[]}}}}'
 kubectl -n kube-system rollout restart deployment/coredns
 sleep 6
 kubectl patch configmap -n kube-system dns-autoscaler --patch '{"data":{"linear":"{\"coresPerReplica\":256,\"min\":1,\"nodesPerReplica\":16,\"preventSinglePointFailure\":true}"}}'
 kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
-  - Wait for all pods to start up
-```sh
-watch kubectl get po -Aansible -i inventory/${CLUSTER}/hosts.yaml -m ping all && time ansible-playbook -i inventory/${CLUSTER}/hosts.yaml --become --become-user=root --ask-become-pass --extra-vars @${CLUSTER}-vars.yml --user=fedora cluster.yml
-
-```
--------------------------------------------------
-# TIPS
 ```sh
 ## USE WITH EXTREME CAUTION
 for i in $(sudo lvscan | grep -v fedora | awk '{print $2}' | sed "s/'//g"); do sudo lvremove -y $i; done
