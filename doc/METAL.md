@@ -23,8 +23,6 @@ sudo dnf install -y openvswitch libibverbs openvswitch-devel NetworkManager-tui 
 sudo sed -i 's/^apply_updates = no/apply_updates = yes/g' /etc/dnf/automatic.conf
 sudo systemctl enable --now dnf-automatic.timer
 sudo systemctl enable --now openvswitch
-sudo python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade glances
 sudo dnf -y update
 ```
 #### 6.b) Install virtctl binary
@@ -186,17 +184,18 @@ sudo reboot
 #### 7) Prepare Kubespray ansible dependencies
   - Clone repo & install ansible packages
 ```sh
+sudo python3 -m pip install --upgrade pip
 git clone https://github.com/kubernetes-sigs/kubespray.git ~/kubespray && cd ~/kubespray/
 python3 -m pip install --upgrade -r requirements.txt
 ```
   - Export Variables on all nodes
 ```sh
-export DNSIP=192.168.1.1
-export VIPADDR=192.168.1.50
-export IPADDR1=192.168.1.51
-export IPADDR2=192.168.1.52
-export IPADDR3=192.168.1.53
-export CLUSTER="undercloud"
+export DNSIP=192.168.16.1
+export VIPADDR=192.168.16.60
+export IPADDR1=192.168.16.61
+export IPADDR2=192.168.16.62
+export IPADDR3=192.168.16.63
+export CLUSTER="kubespray"
 ```
   - Create ansible hosts inventory file
 ```sh
@@ -228,7 +227,6 @@ loadbalancer_apiserver:
   port: 8443
 #######################################################
 # EXPERIMENTAL
-# :w!
 # curl -L https://raw.githubusercontent.com/alauda/kube-ovn/release-1.7/dist/images/install.sh | bash
 #kube_network_plugin: kube-ovn
 EOF
