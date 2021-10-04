@@ -236,7 +236,13 @@ ansible -i inventory/${CLUSTER}/hosts.yaml -m ping all --user=$USER && time ansi
 ```sh
 mkdir -p ~/.kube && cp inventory/${CLUSTER}/artifacts/admin.conf ~/.kube/config && chmod 600 ~/.kube/config
 curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset.yml | kubectl apply -f -
-
+```
+  - Relabel nodes for small cluster Hyper Converged Infrastructure topology
+```sh
+kubectl taint nodes --all --overwrite node-role.kubernetes.io/master-
+kubectl label nodes --all --overwrite node-role.kubernetes.io/master=''
+kubectl label nodes --all --overwrite node-role.kubernetes.io/worker=''
+kubectl label nodes --all --overwrite node-role.kubernetes.io/control-plane=''
 ```
   - Wait for all pods to start up
 ```sh
