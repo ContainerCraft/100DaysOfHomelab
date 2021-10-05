@@ -39,12 +39,15 @@ sudo install -o root -g root -m 0755 /tmp/kubectl /usr/local/bin/kubectl
 #### 6.d) Move ResolveD to port 5353 (required only on CentOS Workstation / Server with GUI
   - Export Variables on all nodes
 ```sh
+cat <<EOF > ~/environment
 export DNSIP=192.168.1.1
 export VIPADDR=192.168.1.50
 export IPADDR1=192.168.1.51
 export IPADDR2=192.168.1.52
 export IPADDR3=192.168.1.53
 export CLUSTER="undercloud"
+EOF
+source ~/environment
 ```
 ```sh
 cat <<EOF | sudo tee /etc/systemd/resolved.conf
@@ -188,14 +191,9 @@ sudo python3 -m pip install --upgrade pip
 git clone https://github.com/kubernetes-sigs/kubespray.git ~/kubespray && cd ~/kubespray/
 python3 -m pip install --upgrade -r requirements.txt
 ```
-  - Export Variables on all nodes
+  - Re-Export Variables on all nodes
 ```sh
-export DNSIP=192.168.16.1
-export VIPADDR=192.168.16.60
-export IPADDR1=192.168.16.61
-export IPADDR2=192.168.16.62
-export IPADDR3=192.168.16.63
-export CLUSTER="kubespray"
+source ~/environment
 ```
   - Create ansible hosts inventory file
 ```sh
