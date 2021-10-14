@@ -1,3 +1,7 @@
+  - Add ContainerCraft Helm Repo
+```sh
+helm repo add ccio https://containercraft.io/helm/
+```
   - (Example) Install Default Storage
 ```sh
 helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
