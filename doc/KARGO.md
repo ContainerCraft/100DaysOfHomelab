@@ -1,21 +1,33 @@
-  - Add ContainerCraft Helm Repo
+## Install Kargo Kubevirt Hypervisor Components
+  - Add Helm Repos
 ```sh
 helm repo add ccio https://containercraft.io/helm/
+helm repo add jetstack  https://charts.jetstack.io
+helm repo update
 ```
-  - (Example) Install Default Storage
+  - Install Cert Manager
 ```sh
-helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
+helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
 ```
   - Install Network Addons Operator for Multus & other network plugins
 ```sh
 helm install cluster-network-addons ccio/cluster-network-addons --namespace cluster-network-addons --create-namespace
 ```
-  - Install Cert Manager
-```sh
-helm repo add jetstack  https://charts.jetstack.io
-helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
-```
   - Install Kargo KubeVirt Components
 ```sh
 helm install kargo ccio/kargo     --namespace kargo --create-namespace
+```
+
+-------------------------------------------------
+## Optional
+
+  - (Example) Install Storage Provider | Hostpath Provisioner
+```sh
+helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
+kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
+  - (Example) Install Storage Provider | Rook Ceph
+```sh
+helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
 ```
