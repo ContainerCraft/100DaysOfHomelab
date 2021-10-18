@@ -2,20 +2,21 @@
   - Add Helm Repos
 ```sh
 helm repo add ccio https://containercraft.io/helm/
-helm repo add jetstack  https://charts.jetstack.io
+helm repo add jetstack https://charts.jetstack.io
 helm repo update
 ```
   - Install Cert Manager
 ```sh
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
 ```
-  - Install Network Addons Operator for Multus & other network plugins
+  - Install Network Addons Operator
 ```sh
 helm install cluster-network-addons ccio/cluster-network-addons --namespace cluster-network-addons --create-namespace
 ```
   - Install Kargo KubeVirt Components
 ```sh
-helm install kargo ccio/kargo     --namespace kargo --create-namespace
+helm install kargo ccio/kargo --namespace kargo --create-namespace
+kubectl label nodes --all node-role.kubernetes.io/kubevirt=""
 ```
 
 -------------------------------------------------
