@@ -1,4 +1,20 @@
-## Install Kargo Kubevirt Hypervisor Components
+-------------------------------------------------
+## Storage    
+
+  - (Example) Install Storage Provider | Hostpath Provisioner
+```sh
+helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
+kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
+  - (Example) Install Storage Provider | Rook Ceph
+```sh
+helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
+```
+
+-------------------------------------------------
+## Install Kargo Kubevirt Hypervisor Components    
+
   - Add Helm Repos
 ```sh
 helm repo add ccio https://containercraft.io/helm/
@@ -15,20 +31,9 @@ helm install cluster-network-addons ccio/cluster-network-addons --namespace clus
 ```
   - Install Kargo KubeVirt Components
 ```sh
+kubectl create ns kubevirt
 helm install kargo ccio/kargo --namespace kargo --create-namespace
 kubectl label nodes --all node-role.kubernetes.io/kubevirt=""
 ```
 
--------------------------------------------------
-## Optional
 
-  - (Example) Install Storage Provider | Hostpath Provisioner
-```sh
-helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
-kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-```
-
-  - (Example) Install Storage Provider | Rook Ceph
-```sh
-helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
-```
