@@ -1,5 +1,7 @@
 # TIPS
 ```sh
+kubectl edit -n kube-system daemonset.apps/calico-node
+kubectl edit -n kube-system deployment.apps/calico-kube-controllers
 kubectl patch node node1 -p '{"spec":{"taints":[]}}'
 kubectl scale deployment --replicas=0 dns-autoscaler --namespace=kube-system
 kubectl patch deployment -n kube-system coredns --patch='{"spec":{"template":{"spec":{"tolerations":[]}}}}'
