@@ -1,4 +1,14 @@
 -------------------------------------------------
+## Update Helm Repos  
+
+  - Add Helm Repos
+```sh
+helm repo add ccio https://containercraft.io/helm
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+```
+
+-------------------------------------------------
 ## Storage    
 
   - (Example) Install Storage Provider | Hostpath Provisioner
@@ -15,12 +25,6 @@ helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
 -------------------------------------------------
 ## Install Kargo Kubevirt Hypervisor Components    
 
-  - Add Helm Repos
-```sh
-helm repo add ccio https://containercraft.io/helm/
-helm repo add jetstack https://charts.jetstack.io
-helm repo update
-```
   - Install Cert Manager
 ```sh
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
