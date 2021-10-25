@@ -13,9 +13,9 @@ curl -L https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master
 ```
 ```sh
 ## USE WITH EXTREME CAUTION
-for i in $(sudo lvscan | grep -v fedora | awk '{print $2}' | sed "s/'//g"); do sudo lvremove -y $i; done
-for i in $(sudo vgscan | grep -v fedora | awk '{print $4}' | sed 's/"//g'); do sudo vgremove -y $i; done
-for i in $(sudo pvscan | grep -v fedora | awk '/dev/{print $2}'); do sudo pvremove -y $i; done
+for i in $(sudo lvscan | grep -vE "ubuntu|fedora|root" | awk '{print $2}' | sed "s/'//g"); do sudo lvremove -y $i; done
+for i in $(sudo vgscan | grep -vE "ubuntu|fedora|root" | awk '{print $4}' | sed 's/"//g'); do sudo vgremove -y $i; done
+for i in $(sudo pvscan | grep -vE "ubuntu|fedora|root" | awk '/dev/{print $2}'); do sudo pvremove -y $i; done
 sudo wipefs -a /dev/sdb /dev/sdc /dev/nvme0n1
 sudo sfdisk --delete /dev/sdb
 sudo sfdisk --delete /dev/sdc
