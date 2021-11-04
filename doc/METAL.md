@@ -33,5 +33,5 @@ watch -c 'KUBECONFIG=/tmp/kubeconfig kubectl get po -A'
 ```
 #### 5) Link kubectl into path && Optimize for single node
 ```sh
-mkdir -p ~/.kube && cp inventory/${CLUSTER}/artifacts/admin.conf ~/.kube/kubespray && chmod 600 ~/.kube/kubespray
+mkdir -p ~/.kube && cp /tmp/kubeconfig ~/.kube/kubespray && chmod 600 ~/.kube/kubespray
 ```
