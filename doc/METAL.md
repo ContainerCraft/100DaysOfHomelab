@@ -31,7 +31,11 @@ docker run -it --rm --pull always \
 ```sh
 watch -c 'KUBECONFIG=/tmp/kubeconfig kubectl get po -A'
 ```
-#### 5) Link kubectl into path && Optimize for single node
+#### 5) copy kubectl into kubeconfig path
 ```sh
 mkdir -p ~/.kube && cp /tmp/kubeconfig ~/.kube/kubespray && chmod 600 ~/.kube/kubespray
+```
+#### 5) Point KUBECONFIG to new kubespray config
+```sh
+export KUBECONFIG=~/.kube/kubespray
 ```
