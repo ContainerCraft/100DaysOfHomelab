@@ -1,4 +1,5 @@
 # 100DaysOfHomelab
+### [Hardware](docs/hardware)
 ### Platform
   1. [Bare Metal Setup](docs/platform/metal.md)
   2. [Kargo Hypervisor](docs/platform/kargo.md)
