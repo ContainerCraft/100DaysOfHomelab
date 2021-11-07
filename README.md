@@ -3,7 +3,7 @@
 ### Platform
   1. [Bare Metal Setup](docs/platform/metal.md)
   2. [Kargo Hypervisor](docs/platform/kargo.md)
-  3. [Rook Ceph Storage](docs/platform/storage.md)
+  3. [Cluster Storage](docs/platform/storage.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)
 ### Middleware    
 ### Applications    
