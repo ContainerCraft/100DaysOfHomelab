@@ -11,20 +11,24 @@
 ![lasvg](https://raw.githubusercontent.com/ContainerCraft/100DaysOfHomelab/main/web/drawio/100Days.png)
 
 ## What is it?
-Intended for both the new hobbiest and experienced DevOps professional.    
-This set of guides & build tools is aimed at the Single Host comodity Nuc/Laptop/Desktop Cluster "HomeLab" Paradigm and can be expanded upon once the core fundamentals are practiced.    
+Intended for both the new hobbiest and experienced DevOps professional. This set of guides & build tools is intended for the local comodity Nuc/Laptop/Desktop cluster "HomeLab" paradigm and can be expanded upon once the core fundamentals are understood.    
+    
+The original inspiration for this project came from endless hours of testing different 
+virtual network and virtual machine building tools and strategies in search of a paradigm
+that meets a number of criteria included in the following criteria. All of this time spent
+resulted in distractions from core goals of building locally self hosted "cloud" services.
+
+## Purpose:
+This tooling provides a common platform to quickly and seamlessly build, share, and colaborate on declarative infrastructure and applications.    
     
 By following these guides you will be able to:    
   1. Demostrate the significant potential of modest hardware 
   2. Improve your understandng and fluency in fitting common commercially relevant Open Source Software components together    
   3. Overcome barriers in consuming automation tools to improve your workflow beyond the burden of menial tasks    
+  4. Enjoy locally hosted "cloud" services from your own hardware under your own control
+  5. Be part of a community with shared fundamental infrastructure architecture
 
-## Purpose:
-This tooling provides a common platform to quickly and seamlessly build declarative infrastructure and applications.    
-    
-The original inspiration for this project came from endless hours of testing different 
-virtual network and virtual machine building tools and strategies in search of a paradigm
-that meets a number of criteria included in the following.
+## Criteria:
 
 #### The tooling should be consistent across hardware platforms including:
   + Client Laptops
