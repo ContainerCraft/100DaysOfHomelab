@@ -6,7 +6,20 @@
   3. [Cluster Storage](docs/platform/storage.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)
 ### Middleware    
+  - [ ] [Gitea](https://docs.gitea.io/en-us/install-on-kubernetes)
+  - [ ] [ddclient](https://docs.linuxserver.io/images/docker-ddclient)
+  - [ ] [Guacamole](https://docs.linuxserver.io/images/docker-guacd)
+  - [ ] [The Lounge](https://docs.linuxserver.io/images/docker-thelounge)
+  - [ ] [Netboot.xyz](https://docs.linuxserver.io/images/docker-netbootxyz)
+  - [ ] [Unifi Controller](https://docs.linuxserver.io/images/docker-unifi-controller)
+  - [ ] [Pull through image registry cache](https://docs.docker.com/registry/recipes/mirror)
 ### Applications    
+  - [ ] [Heimdall](https://docs.linuxserver.io/images/docker-heimdall)
+  - [ ] [Snapdrop](https://docs.linuxserver.io/images/docker-snapdrop)
+  - [ ] [VSCode](https://docs.linuxserver.io/images/docker-code-server)
+  - [ ] [JupyterHub](https://jupyterhub.readthedocs.io/en/0.7.2/getting-started.html)
+
+#### [*and more to come](https://github.com/awesome-selfhosted/awesome-selfhosted)
 ----------------
 ## Physical Architecture
 ![lasvg](https://raw.githubusercontent.com/ContainerCraft/100DaysOfHomelab/main/web/drawio/100Days.png)
