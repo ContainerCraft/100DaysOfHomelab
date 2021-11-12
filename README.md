@@ -6,6 +6,7 @@
   3. [Cluster Storage](docs/platform/storage.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)
 ### Middleware    
+  - [ ] [VyOS GitOps Gateway & Firewall](https://vyos.io/)
   - [ ] [Gitea](https://docs.gitea.io/en-us/install-on-kubernetes)
   - [ ] [ddclient](https://docs.linuxserver.io/images/docker-ddclient)
   - [ ] [Guacamole](https://docs.linuxserver.io/images/docker-guacd)
