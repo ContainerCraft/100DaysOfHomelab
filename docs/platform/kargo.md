@@ -39,5 +39,9 @@ kubectl create ns kubevirt
 helm install kargo ccio/kargo --namespace kargo --create-namespace
 kubectl label nodes --all node-role.kubernetes.io/kubevirt=""
 ```
-
-
+-------------------------------------------------
+## OPTIONAL: Install Prometheus for Metrics
+```sh
+helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update
+helm install kube-prometheus bitnami/kube-prometheus --namespace prometheus --create-namespace
+```
