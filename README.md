@@ -18,6 +18,7 @@
   - [ ] [Heimdall](https://docs.linuxserver.io/images/docker-heimdall)
   - [ ] [Snapdrop](https://docs.linuxserver.io/images/docker-snapdrop)
   - [ ] [VSCode](https://docs.linuxserver.io/images/docker-code-server)
+  - [ ] [Jitsi Meet](https://github.com/jitsi-contrib/jitsi-helm)
   - [ ] [JupyterHub](https://jupyterhub.readthedocs.io/en/0.7.2/getting-started.html)
 
 #### [*and more to come](https://github.com/awesome-selfhosted/awesome-selfhosted)
