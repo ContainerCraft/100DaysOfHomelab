@@ -17,11 +17,6 @@ helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath
 kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-  - (Example) Install Storage Provider | Rook Ceph
-```sh
-helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
-```
-
 -------------------------------------------------
 ## Install Kargo Kubevirt Hypervisor Components    
 
