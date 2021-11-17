@@ -7,17 +7,20 @@ Persistent storage for your applications must be provided by one or more Storage
 
 ---
 ## Install Storage Provider
-  - (Option 1) Hostpath Provisioner
+  - (Option 1) Hostpath Provisioner 
+>  Recommended for all installations
 ```sh
 helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
 ```
   - (Option 2) Rook Ceph
+>  Recommended for >=3 node clusters with extra empty HDD/SSD/NVME disks
 ```sh
 helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
 ```
 
 ---
 ## Set default storage class
+>    Set only one storage class as default
   - Execute to make the storage class `hostpath-provisioner` your default storage class
 ```sh
 kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
@@ -28,6 +31,8 @@ kubectl patch storageclass ceph-filesystem-ssd -p '{"metadata": {"annotations":{
 ```
 
 ---
+## Next: [Deploy Kargo Hypervisor Stack](./kargo.md)     
+    
 ## Further Reading
   - [Rook Ceph Docs](https://rook.github.io/docs/rook/latest)
   - [Hostpath Provisioner](https://github.com/kubevirt/hostpath-provisioner)

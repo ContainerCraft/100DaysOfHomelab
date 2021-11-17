@@ -5,16 +5,8 @@
 ```sh
 helm repo add ccio https://containercraft.io/helm
 helm repo add jetstack https://charts.jetstack.io
+helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-```
-
--------------------------------------------------
-## Storage    
-
-  - (Example) Install Storage Provider | Hostpath Provisioner
-```sh
-helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
-kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
 -------------------------------------------------
@@ -22,21 +14,24 @@ kubectl patch storageclass hostpath-provisioner -p '{"metadata": {"annotations":
 
   - Install Cert Manager
 ```sh
-helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
+helm upgrade --install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
 ```
   - Install Network Addons Operator
 ```sh
-helm install cluster-network-addons ccio/cluster-network-addons --namespace cluster-network-addons --create-namespace
+helm upgrade --install cluster-network-addons ccio/cluster-network-addons --namespace cluster-network-addons --create-namespace
 ```
   - Install Kargo KubeVirt Components
 ```sh
-kubectl create ns kubevirt
-helm install kargo ccio/kargo --namespace kargo --create-namespace
+kubectl create namespace kubevirt --dry-run=client -oyaml | kubectl apply -f -
+helm upgrade --install kargo ccio/kargo --namespace kargo --create-namespace
 kubectl label nodes --all node-role.kubernetes.io/kubevirt=""
 ```
+    
 -------------------------------------------------
 ## OPTIONAL: Install Prometheus for Metrics
 ```sh
-helm repo add bitnami https://charts.bitnami.com/bitnami && helm repo update
 helm install kube-prometheus bitnami/kube-prometheus --namespace prometheus --create-namespace
 ```
+
+---------------------------------
+## Next: [Deploy Test Virtual Machines](./test.md)

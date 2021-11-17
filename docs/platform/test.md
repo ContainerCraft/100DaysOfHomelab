@@ -42,6 +42,9 @@ kubectl apply -f https://raw.githubusercontent.com/ContainerCraft/Kargo/master/t
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/ContainerCraft/Kargo/master/test/ubuntu-br0-persistent.yaml
 ```
+## Create Live Migration enabled VMs
+>    Note: the following virtual machines require the `ceph-filesystem-*` storage classes     
+    
   - Deploy Persistent Live Migration Enabled Bridged Ubuntu VM
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/ContainerCraft/Kargo/master/test/ubuntu-br0-persistent-livemigrate.yaml
