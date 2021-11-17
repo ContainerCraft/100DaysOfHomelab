@@ -47,6 +47,7 @@ By following these guides you will be able to:
 ## Criteria:
 
 #### The tooling should be consistent across hardware platforms including:
+  + Raspberry Pi
   + Client Laptops
   + Client Desktops
   + Low cost Home Labs
