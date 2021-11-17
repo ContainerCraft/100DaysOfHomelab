@@ -2,8 +2,8 @@
 ### [Hardware](docs/hardware)
 ### Platform
   1. [Bare Metal Setup](docs/platform/metal.md)
-  2. [Kargo Hypervisor](docs/platform/kargo.md)
-  3. [Cluster Storage](docs/platform/storage.md)
+  2. [Cluster Storage](docs/platform/storage.md)
+  3. [Kargo Hypervisor](docs/platform/kargo.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)
 ### Middleware    
   - [ ] [VyOS GitOps Gateway & Firewall](https://vyos.io/)
