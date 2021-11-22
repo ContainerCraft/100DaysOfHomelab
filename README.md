@@ -1,7 +1,10 @@
-# 100DaysOfHomelab
+# 100DaysOfHomelab | Getting Started
 ### [Hardware](docs/hardware)
+  1. [Bare Metal](docs/hardware/kubernetes.md)
+  2. [Install Fedora] (coming soon)
+  - [Ensure you configured br0 network interface](./docs/hardware/Manual_br0.md)
 ### Platform
-  1. [Bare Metal Setup](docs/platform/metal.md)
+  1. [Kubernetes Deploy](docs/platform/kubernetes.md)
   2. [Cluster Storage](docs/platform/storage.md)
   3. [Kargo Hypervisor](docs/platform/kargo.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)

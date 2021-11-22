@@ -1,5 +1,5 @@
 # Sherwa | Hardware Reference Architecture
-Sherwa, The 100 Days of Homelab Reference Architecture is intended to demonstrate
+The 100 Days of Homelab Reference Architecture is intended to demonstrate
 practical up-cycling of effective and low cost comodity hardware.
 
 Goals:
@@ -13,13 +13,13 @@ Non-Goals:
   - Elimination of all Single Points of Failure
 
 ## Operating System (OS)
-| Flavor            | Status                            |
-|:------------------|-----------------------------------|
-| [CentOS Stream 8] | Recommended                       |
-| [Fedora 34+]      | Support in development            |
-| [Ubuntu 20.04+]   | Desktop only, method undocumented |
+| Flavor              | Status                            |
+|:--------------------|-----------------------------------|
+| [Fedora 34+]        | Recommended                       |
+| [CentOS Stream 8,9] | In development                    |
+| [Ubuntu 20.04+]     | Desktop only, method undocumented |
     
-[CentOS Stream 8]:https://www.centos.org/centos-stream/
+[CentOS Stream 8,9]:https://www.centos.org/centos-stream/
 [Fedora 34+]:https://ubuntu.com/download/desktop
 [Ubuntu 20.04+]:https://getfedora.org/en/server/
 
