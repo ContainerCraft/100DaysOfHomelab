@@ -1,4 +1,5 @@
 # 100DaysOfHomelab | Getting Started
+### Join the ContainerCraft [CodeCtl Slack](https://join.slack.com/t/codectl/shared_invite/zt-szwjvpmc-RH_iObGnwSg1BVpXu79dAA)
 ### Hardware
   1. [Bare Metal](docs/hardware/README.md)
   2. [Install Fedora] (coming soon)
