@@ -3,12 +3,29 @@
 ### Hardware
   1. [Bare Metal](docs/hardware/README.md)
   2. [Install Fedora] (coming soon)
-  - [Ensure you created br0 network interface](./docs/hardware/Manual_br0.md)
+> ###### [Ensure you created br0 network interface](./docs/hardware/Manual_br0.md)
 ### Platform
   1. [Kubernetes Deploy](docs/platform/kubernetes.md)
   2. [Cluster Storage](docs/platform/storage.md)
   3. [Kargo Hypervisor](docs/platform/kargo.md)
   4. [Deploy Virtual Machines](docs/platform/test.md)
+### Infrastructure
+  - [ ] Overlay Networks
+  - [ ] Virtual Machines
+  - [ ] VDI or Virtual Desktop / RDP Remote Host
+    - [ ] Ubuntu
+    - [ ] Fedora
+    - [ ] Windows
+    - [ ] Windows Server
+  - [ ] Virtual Gateway / Firewall
+  - [ ] Network Services
+    - [ ] DHCP
+    - [ ] DNS
+    - [ ] PROXY
+    - [ ] VPN
+  - [ ] VPC
+  - [ ] Kubernetes on Kubernetes or Kubernetes as a Service
+> ###### A VPC is a logically isolated Virtual Private Cloud created on shared resources *[example](https://aws.amazon.com/vpc/)
 ### Middleware    
   - [ ] [VyOS GitOps Gateway & Firewall](https://vyos.io/)
   - [ ] [Gitea](https://docs.gitea.io/en-us/install-on-kubernetes)
