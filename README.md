@@ -27,7 +27,6 @@
   - [ ] Kubernetes on Kubernetes or Kubernetes as a Service
 > ###### A VPC is a logically isolated Virtual Private Cloud created on shared resources *[example](https://aws.amazon.com/vpc/)
 ### Middleware    
-  - [ ] 
   - [ ] [Gitea](https://docs.gitea.io/en-us/install-on-kubernetes)
   - [ ] [ddclient](https://docs.linuxserver.io/images/docker-ddclient)
   - [ ] [Guacamole](https://docs.linuxserver.io/images/docker-guacd)
