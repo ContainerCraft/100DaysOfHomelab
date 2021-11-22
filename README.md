@@ -17,7 +17,7 @@
     - [ ] Fedora
     - [ ] Windows
     - [ ] Windows Server
-  - [ ] Virtual Gateway / Firewall
+  - [ ] Virtual [VyOS](https://vyos.io/) Gateway / Firewall
   - [ ] Network Services
     - [ ] DHCP
     - [ ] DNS
@@ -27,7 +27,7 @@
   - [ ] Kubernetes on Kubernetes or Kubernetes as a Service
 > ###### A VPC is a logically isolated Virtual Private Cloud created on shared resources *[example](https://aws.amazon.com/vpc/)
 ### Middleware    
-  - [ ] [VyOS GitOps Gateway & Firewall](https://vyos.io/)
+  - [ ] 
   - [ ] [Gitea](https://docs.gitea.io/en-us/install-on-kubernetes)
   - [ ] [ddclient](https://docs.linuxserver.io/images/docker-ddclient)
   - [ ] [Guacamole](https://docs.linuxserver.io/images/docker-guacd)
