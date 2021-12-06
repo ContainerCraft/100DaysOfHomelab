@@ -33,7 +33,7 @@ docker run -it --rm --pull always \
     -e KUBE_API_FQDN="api.${CLUSTER_DOMAIN}" \
     -e HOSTS="${HOSTS}" \
     -e VRRP_IP="${VIRTUAL_IP}" \
-  quay.io/containercraft/konductor:kubespray \
+  quay.io/containercraft/konductor:kubespray -e crio_version="1.22" \
     --user ${SSH_USER} -e ansible_ssh_pass=${SSH_PASS} -e ansible_sudo_pass=${SSH_PASS}
 ```
 #### 5) copy kubectl into kubeconfig path
