@@ -19,10 +19,10 @@ Or `sudo dd if=~/Downloads/$FEDORA_ISO of=/dev/sdX conv=sync status=progress`
 ### 4. Deploy Kubespray
   a. Export Variables
 ```sh
-export SSH_USER='fedora'
-export SSH_PASS='fedora'
-export HOSTS="192.168.1.61"
-export VIRTUAL_IP="192.168.1.60"
+export SSH_USER='kc2admin'
+export SSH_PASS='kc2admin'
+export HOSTS="192.168.1.51 192.168.1.52 192.168.1.53"
+export VIRTUAL_IP="192.168.1.50"
 export CLUSTER_DOMAIN="kubespray.home.arpa"
 ```
   b. Deploy Kubespray
