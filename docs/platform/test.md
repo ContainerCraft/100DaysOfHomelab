@@ -20,13 +20,13 @@ virtctl version --client
 ```sh
 ls ~/.ssh/id_rsa.pub >/dev/null || ssh-keygen
 kubectl create secret generic kargo-sshpubkey-kc2user \
-    --namespace kargo --dry-run=client -oyaml \
+    --dry-run=client -oyaml \
     --from-file=key1=$HOME/.ssh/id_rsa.pub \
   | kubectl apply -f -
 ```
   - Verify secret contents
 ```sh
-kubectl get secret -nkargo -oyaml kargo-sshpubkey-kc2user | awk '/key1:/{print $2}' | base64 -d
+kubectl get secret -oyaml kargo-sshpubkey-kc2user | awk '/key1:/{print $2}' | base64 -d
 ```
 
 ## Create your first Virtual Machine(s)
@@ -71,12 +71,12 @@ kubectl get vmi -A
   - Connect to different VMI Serial Console
 >    FYI: Exit serial console with key combination `ctrl + shift + ]`
 ```sh
-virtctl console -n kargo ubuntu
-virtctl console -n kargo ubuntu-br0
-virtctl console -n kargo ubuntu-br0-persistent
-virtctl console -n kargo ubuntu-br0-persistent-livemigrate
-virtctl console -n kargo ubuntu-br0-persistent-livemigrate-rdp
-virtctl console -n kargo fedora-br0-persistent-livemigrate-rdp
+virtctl console ubuntu
+virtctl console ubuntu-br0
+virtctl console ubuntu-br0-persistent
+virtctl console ubuntu-br0-persistent-livemigrate
+virtctl console ubuntu-br0-persistent-livemigrate-rdp
+virtctl console fedora-br0-persistent-livemigrate-rdp
 ```
   - Example ssh to bridge VMI with default user
 >    FYI: get ip address from get vmi command
@@ -86,7 +86,7 @@ ssh kc2user@192.168.1.243
 
 ## FAQ:    
   - Q.1: Where do the vm images come from?
-  - A.1: All images are built directly from upstream sources via [public opensource pipelines on Github](https://github.com/ContainerCraft/qubo/actions)    
+  - A.1: All images are built directly from upstream sources via [public opensource pipelines](https://github.com/ContainerCraft/kmi)    
         
     
   - Q.2: Can I change my ssh key after deploying virtual machines?
