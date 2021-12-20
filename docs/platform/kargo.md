@@ -1,15 +1,3 @@
--------------------------------------------------
-## Update Helm Repos  
-
-  - Add Helm Repos
-```sh
-helm repo add ccio https://containercraft.io/helm
-helm repo add jetstack https://charts.jetstack.io
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-```
-
--------------------------------------------------
 ## Install Kargo Kubevirt Hypervisor Components    
 
   - Install Cert Manager
@@ -27,11 +15,5 @@ helm upgrade --install kargo ccio/kargo --namespace kargo --create-namespace
 kubectl label nodes --all node-role.kubernetes.io/kubevirt=""
 ```
     
--------------------------------------------------
-## OPTIONAL: Install Prometheus for Metrics
-```sh
-helm install kube-prometheus bitnami/kube-prometheus --namespace prometheus --create-namespace
-```
-
 ---------------------------------
 ## Next: [Deploy Test Virtual Machines](./test.md)

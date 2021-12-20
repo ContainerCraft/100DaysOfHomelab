@@ -2,9 +2,10 @@
 ### Join the ContainerCraft [CodeCtl Slack](https://join.slack.com/t/codectl/shared_invite/zt-szwjvpmc-RH_iObGnwSg1BVpXu79dAA)
 ### Hardware
   1. [Bare Metal](docs/hardware/README.md)
-  2. [Install Fedora] (coming soon)
+  2. [Install Fedora](docs/hardware/Fedora.md) (coming soon)
 > ###### [Ensure you created br0 network interface](./docs/hardware/Manual_br0.md)
 ### Platform
+  0. [Pre-reqs](docs/platform/prereqs.md)
   1. [Kubernetes Deploy](docs/platform/kubernetes.md)
   2. [Cluster Storage](docs/platform/storage.md)
   3. [Kargo Hypervisor](docs/platform/kargo.md)

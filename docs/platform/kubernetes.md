@@ -3,19 +3,6 @@
 ## Install Kubernetes
 In this section we will install kubernetes onto the Fedora host(s) that we are using for the [Kargo Hypervisor](https://github.com/ContainerCraft/Kargo).
 
-### 1. Download & Write Fedora 34+ to USB
-  - [From Windows](https://www.youtube.com/watch?v=42vjjlhtufs)
-  - [From MacOS](https://www.youtube.com/watch?v=f78AwZk3IXs)
-  - [From Linux](https://www.youtube.com/watch?v=BCeG2JMuCpU)
-    
-Or `sudo dd if=~/Downloads/$FEDORA_ISO of=/dev/sdX conv=sync status=progress`
->  ###### * Where sdX is the name of your usb drive as seen in `$~ lsblk`
->  ###### **Be sure the USB is completely written before unpluging
-### 2. [Install Fedora] (Video Coming Soon)
-### 3. [Configure Host Bridge br0 & Static IP(s)](../../docs/hardware/Manual_br0.md)
-  - each node should have a `br0` linux bridge interface
-  - each node's `br0` interface should be the only default interface
-  - each node's `br0` interface should be configured with a static address
 ### 4. Deploy Kubespray
   a. Export Variables
 ```sh
@@ -45,6 +32,20 @@ mkdir -p ~/.kube && cp /tmp/kubeconfig ~/.kube/kubespray && chmod 600 ~/.kube/ku
 export KUBECONFIG=~/.kube/kubespray
 kubectl get po -A
 ```
+#### 6) For Single, or 3 Node Clusters:
+```sh
+kubectl taint nodes --all --overwrite node-role.kubernetes.io/master-
+kubectl label nodes --all --overwrite node-role.kubernetes.io/master=''
+kubectl label nodes --all --overwrite node-role.kubernetes.io/control-plane=''
+kubectl label nodes --all --overwrite node-role.kubernetes.io/worker=''
+```
+#### 5) Point KUBECONFIG to new kubespray config && Test
+-------------------------------------------------
+## OPTIONAL: Install Prometheus for Metrics
+```sh
+helm install kube-prometheus bitnami/kube-prometheus --namespace prometheus --create-namespace
+```
+
 -----
 ## Next: [Install Storage Provider(s)](./storage.md)
 > ##### *This section also works on Raspberry Pi's
