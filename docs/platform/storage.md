@@ -10,12 +10,12 @@ Persistent storage for your applications must be provided by one or more Storage
   - (Option 1) Hostpath Provisioner 
 >  Recommended for all installations
 ```sh
-helm install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
+helm upgrade --install hostpath-provisioner ccio/hostpath-provisioner --namespace hostpath-provisioner --create-namespace
 ```
   - (Option 2) Rook Ceph
 >  Recommended for >=3 node clusters with extra empty HDD/SSD/NVME disks
 ```sh
-helm install calypso ccio/calypso --namespace rook-ceph --create-namespace
+helm upgrade --install calypso ccio/calypso --namespace rook-ceph --create-namespace
 ```
 
 ---
