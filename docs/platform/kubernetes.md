@@ -49,4 +49,4 @@ helm install kube-prometheus bitnami/kube-prometheus --namespace prometheus --cr
 -----
 ## Next: [Install Storage Provider(s)](./storage.md)
 > ##### *This section also works on Raspberry Pi's
-> ##### **These steps are also valid for just building a local kubernetes cluster without continuing further
+> ##### **These steps are valid for building a kubernetes cluster
