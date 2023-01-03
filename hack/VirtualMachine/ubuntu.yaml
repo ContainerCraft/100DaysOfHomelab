@@ -1,0 +1,116 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: ubuntu
+  namespace: default
+  labels:
+    os: ubuntu
+    app: kargo
+spec:
+  dataVolumeTemplates:
+  - metadata:
+      name: ubuntu-volume-vda-root
+      namespace: default
+    spec:
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 64G
+#       storageClassName: microk8s-hostpath
+      source:
+        registry:
+          url: docker://docker.io/containercraft/ubuntu:22.04
+  running: true
+  template:
+    spec:
+      accessCredentials:
+      - sshPublicKey:
+          propagationMethod:
+            qemuGuestAgent:
+              users:
+              - kc2user
+          source:
+            secret:
+              secretName: kargo-sshpubkey-kc2user
+      domain:
+        clock:
+          timer: {}
+          utc: {}
+        cpu:
+          threads: 2
+          model: host-passthrough
+        devices:
+          autoattachGraphicsDevice: true
+          autoattachPodInterface: false
+          autoattachSerialConsole: true
+          disks:
+          - bootOrder: 1
+            disk:
+              bus: virtio
+            name: ubuntu-disk-vda-root
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
+          interfaces:
+          - bridge: {}
+            model: virtio
+            name: enp1s0
+          networkInterfaceMultiqueue: false
+          rng: {}
+        resources:
+          limits:
+            memory: 6G
+          requests:
+            devices.kubevirt.io/kvm: "1"
+            memory: 6G
+      networks:
+      - name: enp1s0
+        multus:
+          networkName: nadbr0
+      terminationGracePeriodSeconds: 0
+      volumes:
+      - name: ubuntu-disk-vda-root
+        dataVolume:
+          name: ubuntu-volume-vda-root
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          networkData: |
+            version: 2
+            ethernets:
+              enp1s0:
+                dhcp4: true
+                dhcp6: true
+                dhcp-identifier: mac
+          userData: |
+            #cloud-config
+            hostname: ubuntu
+            ssh_pwauth: true
+            disable_root: true
+            chpasswd:
+              list: |
+                kc2user:kc2user
+              expire: False
+            users:
+              - name: kc2user
+                shell: /bin/bash
+                lock_passwd: false
+                sudo: ['ALL=(ALL) NOPASSWD:ALL']
+                groups: sudo,libvirt,xrdp,docker,microk8s,ssl-cert
+            growpart:
+              mode: auto
+              devices: ['/']
+              ignore_growroot_disabled: true
+            package_upgrade: true
+            packages:
+              - "docker.io"
+            runcmd:
+              - "snap remove lxd"
+              - "apt-get remove apport apport-gtk python3-apport python3-problem-report shim-signed apport-symptoms python3-systemd ansible -y --allow-remove-essential"
+              - "apt-get autoremove -y"
+              - "mkdir -p /home/kc2user/.ssh"
+              - "chown -R kc2user:kc2user /home/kc2user/.ssh"
+              - "mkdir -p /home/kc2user/.kube"
+              - "chown -R kc2user:kc2user /home/kc2user/.kube"
+              - "neofetch"

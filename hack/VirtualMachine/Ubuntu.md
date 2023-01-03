@@ -116,7 +116,7 @@
 
   ```bash
   # Enable a few microk8s plugins
-  sudo microk8s enable dns multus cert-manager hostpath-storage metrics-server observability prometheus
+  sudo microk8s enable hostpath-storage dns multus cert-manager metrics-server observability
 
   # Check for all running pods
   kubectl get po -A
@@ -224,3 +224,59 @@ kubectl create -f https://github.com/kubevirt/containerized-data-importer/releas
 
 ## Add a new microk8s node
 
+### 1. Create network br0 interface
+
+  * write br0 netplan config with static IP address
+
+```bash
+# Exammple Netplan br0 configuration
+network:
+version: 2
+ethernets:
+  enp1s0:
+    dhcp4: false
+    dhcp6: false
+bridges:
+  br0:
+    interfaces:
+    - enp1s0
+    dhcp4: false
+    dhcp6: false
+    addresses:
+    - 192.168.1.78/16
+    routes:
+    - to: default
+      via: 192.168.1.1
+    nameservers:
+      addresses:
+      - 192.168.1.9
+      search:
+      - home.arpa
+```
+
+  * Apply configuration
+
+```
+sudo netplan apply
+```
+
+### 2. Install microk8s
+
+```bash
+sudo snap install microk8s --classic
+```
+
+### 3. Connect more nodes to the cluster
+
+  * On a microk8s controlplane node (read the output from this command)
+
+  ```bash
+  microk8s add-node
+  ```
+
+  * On the new microk8s node paste the join command
+
+  ```bash
+  # for example:
+  sudo microk8s join 192.168.1.77:25000/cbac6a5a1233eb63540f010af7eae0f1/faa29c94a66b
+  ```
