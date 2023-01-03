@@ -266,7 +266,7 @@ sudo netplan apply
 sudo snap install microk8s --classic
 ```
 
-### 3. Connect more nodes to the cluster
+### 3. Connect node to the cluster
 
   * On a microk8s controlplane node (read the output from this command)
 
@@ -280,3 +280,5 @@ sudo snap install microk8s --classic
   # for example:
   sudo microk8s join 192.168.1.77:25000/cbac6a5a1233eb63540f010af7eae0f1/faa29c94a66b
   ```
+
+  > NOTE: allow all pods to schedule and try to run, you may need to reboot afterwards to ensure new permissions are applied to allow all pods to correctly run
