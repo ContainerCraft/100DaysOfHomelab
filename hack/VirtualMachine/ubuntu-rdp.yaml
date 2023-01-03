@@ -18,8 +18,6 @@ spec:
         resources:
           requests:
             storage: 64G
-#         limits:
-#           storage: 64G
 #       storageClassName: microk8s-hostpath
       source:
         registry:

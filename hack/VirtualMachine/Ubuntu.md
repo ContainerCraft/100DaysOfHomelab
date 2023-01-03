@@ -186,4 +186,41 @@ kubectl create -f https://github.com/kubevirt/containerized-data-importer/releas
 ### 13. Create an Ubuntu RDP enabled Virtual Machine
 
   ```bash
+  # Create VM
+  kubectl apply -f https://raw.githubusercontent.com/ContainerCraft/100DaysOfHomelab/main/hack/VirtualMachine/ubuntu-rdp.yaml
+
+  # Watch VM status
+  watch kubectl get vmi -owide
   ```
+
+### 14. Access the Virtual Machine
+
+  * Serial Console (watch boot and cloud-init progress)
+
+  ```bash
+  virtctl console ubuntu-rdp
+  ```
+
+  * SSH
+
+  ```bash
+  ssh kc2user@$(kubectl get vmi ubuntu-rdp -ojsonpath={.status.interfaces[]} | jq -r .ipAddress)
+  ```
+
+  * RDP
+  
+  > Access with Remmina RDP client on Linux, or any other RDP client on Windows or MacOS is simple. This example VM yaml creates a username and password in the VM of `kc2user:kc2user` and IP should be listed with the `kubectl get vmi` command.
+
+![rdp](ubuntu-rdp.png)
+
+----------------------------------------------------------------
+
+## For more VMs and images
+
+* Kubevirt VM guest images: https://github.com/ContainerCraft/kmi
+* Kubevirt VM definition examples: https://github.com/ContainerCraft/kc2
+
+----------------------------------------------------------------
+
+## Add a new microk8s node
+
