@@ -1,4 +1,4 @@
-# Sherwa | Hardware Reference Architecture
+# Hardware Reference Architecture
 The 100 Days of Homelab Reference Architecture is intended to demonstrate
 practical up-cycling of effective and low cost comodity hardware.
 
@@ -12,16 +12,22 @@ Non-Goals:
   - System architectures other than x86
   - Elimination of all Single Points of Failure
 
+Cluster:
+![image](https://github.com/user-attachments/assets/9d0cc21a-d278-4535-b3fd-52844504186b)
+
+
 ## Operating System (OS)
-| Flavor              | Status                            |
-|:--------------------|-----------------------------------|
-| [Fedora 34+]        | Recommended                       |
-| [CentOS Stream 8,9] | In development                    |
-| [Ubuntu 20.04+]     | Desktop only, method undocumented |
+| Flavor               | Status                            |
+|:---------------------|-----------------------------------|
+| [Sidero Talos K8s OS]| Recommended                       |
+| [CentOS Stream 8,9]  | Deprecated                        |
+| [Fedora 43+]         | Deprecated                        |
+| [Ubuntu 20.04+]      | Deprecated                        |
     
 [CentOS Stream 8,9]:https://www.centos.org/centos-stream/
 [Fedora 34+]:https://ubuntu.com/download/desktop
 [Ubuntu 20.04+]:https://getfedora.org/en/server/
+[Sidero Talos k8s OS](https://www.talos.dev/)
 
 ## Kargo Bare Metal Hosts (Starting Configuration)
   - Processor: 4c 8T
