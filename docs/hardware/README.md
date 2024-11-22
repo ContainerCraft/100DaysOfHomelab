@@ -12,7 +12,7 @@ Non-Goals:
   - System architectures other than x86
   - Elimination of all Single Points of Failure
 
-Cluster:
+Cluster:    
 ![image](https://github.com/user-attachments/assets/9d0cc21a-d278-4535-b3fd-52844504186b)
 
 
@@ -21,13 +21,13 @@ Cluster:
 |:---------------------|-----------------------------------|
 | [Sidero Talos K8s OS]| Recommended                       |
 | [CentOS Stream 8,9]  | Deprecated                        |
-| [Fedora 43+]         | Deprecated                        |
+| [Fedora 34+]         | Deprecated                        |
 | [Ubuntu 20.04+]      | Deprecated                        |
     
 [CentOS Stream 8,9]:https://www.centos.org/centos-stream/
-[Fedora 34+]:https://ubuntu.com/download/desktop
+[Fedora 34+]:https://ubuntu.com/download/desktop/
 [Ubuntu 20.04+]:https://getfedora.org/en/server/
-[Sidero Talos k8s OS](https://www.talos.dev/)
+[Sidero Talos k8s OS]:https://www.talos.dev/
 
 ## Kargo Bare Metal Hosts (Starting Configuration)
   - Processor: 4c 8T
